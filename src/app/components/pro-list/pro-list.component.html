@@ -1,0 +1,118 @@
+<!--
+    "id" : 1,
+      "sku" : "abc",
+      "productname" : "MI 12",
+      "descriptions" : "mobile product",
+      "uniteprice" : 23000.5,
+      "imageurl" : "https://mi//12",
+      "unitinstock" : 100,
+      "datecreated" : "2021-11-11",
+      "lastupdated" : "2022-07-15",
+      "categoryid" : 7,
+-->
+<p class="para">PRODUCT DETAILS</p>
+<div class="container">
+    <table class="table table-bordered  table-striped">
+       <tr>
+        <th>ID</th>
+        <th>SKU</th>
+        <th>PRODUCT NAME</th>
+        <th>DESCRIPTION</th>
+        <th>UNIT PRICE</th>
+        <th>IMAGE URL</th>
+        <th>UNIT IN STOCK</th>
+        <th>DATE CREATED</th>
+        <th>LAST UPDATED</th>
+        <th>CATEGORY ID</th> 
+       </tr>
+    
+        <tr *ngFor ="let pro of products">
+            <td>{{pro.id}}</td>
+            <td>{{pro.sku}}</td>
+            <td>{{pro.productname}}</td>
+            <td>{{pro.descriptions}}</td>
+            <td>{{pro.uniteprice  | currency :'INR'}}</td>
+            <td>{{pro.imageurl}}</td>
+            <td>{{pro.unitinstock}}</td>
+            <td>{{pro.datecreated}}</td>
+            <td>{{pro.lastupdated}}</td>
+            <td>{{pro.categoryid}}</td>
+        </tr>
+
+    </table>
+
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <p class="subpara"> TO ADD PRODUCT</p>
+    <form class="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-sm-3"><label>PRODUCT ID</label></div>
+            <div class="col-sm-3"><input type="text" name="id" [(ngModel)]="formModel.id"></div>
+        </div>
+        &nbsp;
+    
+        <div class="row">
+            <div class="col-sm-3"><label>PRODUCT SKU</label></div>
+            <div class="col-sm-3"><input type="text" name="sku" [(ngModel)]="formModel.sku" ></div>
+        </div>
+        &nbsp;
+     
+        <div class="row">
+            <div class="col-sm-3"><label>PRODUCT NAME</label></div>
+            <div class="col-sm-3"><input type="text" name="productname" [(ngModel)]="formModel.productname"></div>
+        </div>
+        &nbsp;
+    
+        <div class="row">
+            <div class="col-sm-3"><label>DISCRIPTION</label></div>
+            <div class="col-sm-3"><input type="text" name="descriptions" [(ngModel)]="formModel.descriptions"></div>
+        </div>
+        &nbsp;
+    
+        <div class="row">
+            <div class="col-sm-3"><label>UNIT PRICE</label></div>
+            <div class="col-sm-3"><input type="text" name="uniteprice" [(ngModel)]="formModel.uniteprice"></div>
+        </div>
+        &nbsp;
+    
+        <div class="row">
+            <div class="col-sm-3"><label>IMAGE URL</label></div>
+            <div class="col-sm-3"><input type="text" name="imageurl" [(ngModel)]="formModel.imageurl"></div>
+        </div>
+        &nbsp;
+    
+        <div class="row">
+            <div class="col-sm-3"><label>UNIT IN STOCK</label></div>
+            <div class="col-sm-3"><input type="text" name="unitinstock" [(ngModel)]="formModel.unitinstock"></div>
+        </div>
+        &nbsp;
+    
+        <div class="row">
+            <div class="col-sm-3"><label>DATE CREATED</label></div>
+            <div class="col-sm-3"><input type="text" name="datecreated" [(ngModel)]="formModel.datecreated"></div>
+        </div>
+        &nbsp;
+
+        <div class="row">
+            <div class="col-sm-3"><label>LAST UPDATED</label></div>
+            <div class="col-sm-3"><input type="text" name="lastupdated" [(ngModel)]="formModel.lastupdated"></div>
+        </div>
+        &nbsp;
+
+        <div class="row">
+            <div class="col-sm-3"><label>CATEGORY ID</label></div>
+            <div class="col-sm-3"><input type="text" name="categoryid" [(ngModel)]="formModel.categoryid"></div>
+        </div>
+        &nbsp;
+    
+        <div class="row">
+            <div class="col-sm-3 "><input type="submit" name="submit" class="btn btn-lg btn-primary"></div>
+            <a class= " ankar" href="http://localhost:4200/">BACK TO HOME PAGE </a>
+        </div>
+    
+    </form>
+
+
+
+

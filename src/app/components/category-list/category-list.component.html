@@ -1,0 +1,37 @@
+<p clas="para">CATEGORY DETAILS</p>
+<div class="container">
+    <table class="table table-bordered  table-striped">
+       <tr>
+        <th>CATEGORY ID</th>
+        <th>CATEGORY NAME</th>
+       </tr> 
+
+        <tr *ngFor ="let cat of productCategories">
+            <td>{{cat.categoryid}}</td>
+            <td>{{cat.productcategoryname}}</td>
+        </tr>
+    </table>
+
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <p class="subpara"> TO ADD CATEGORY</p>
+    <form class="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-sm-3"><label>CATEGORY ID</label></div>
+            <div class="col-sm-3"><input type="text" name="categoryid" [(ngModel)]="formModel.categoryid"></div>
+        </div>
+        &nbsp;             
+    
+        <div class="row">
+            <div class="col-sm-3"><label>CATEGORY NAME</label></div>
+            <div class="col-sm-3"><input type="text" name="productcategoryname" [(ngModel)]="formModel.productcategoryname"></div>
+        </div>
+        &nbsp;
+    
+        <div class="row">
+            <div class="col-sm-3"><input type="submit" name="submit" class="btn btn-lg btn-primary"></div>
+            <a class= " ankar" href="http://localhost:4200/">BACK TO HOME PAGE </a>
+        </div>
+    
+    </form>
